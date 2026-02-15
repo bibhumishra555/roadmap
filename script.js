@@ -36,6 +36,54 @@ let startDate = null;
 window.togglePhase = togglePhase;
 window.toggleStep = toggleStep;
 window.resetProgress = resetProgress;
+window.enableDatePicker = enableDatePicker;
+window.disableDatePicker = disableDatePicker;
+window.updateStartDate = updateStartDate;
+
+function enableDatePicker() {
+    const dateText = document.getElementById('startDate');
+    const datePicker = document.getElementById('startDatePicker');
+
+    // Format current start date for input (YYYY-MM-DD)
+    if (startDate) {
+        const d = new Date(startDate);
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        datePicker.value = `${yyyy}-${mm}-${dd}`;
+    }
+
+    dateText.style.display = 'none';
+    datePicker.style.display = 'block';
+    datePicker.focus();
+}
+
+function disableDatePicker() {
+    setTimeout(() => { // Delay to allow onchange to fire first if date was picked
+        document.getElementById('startDate').style.display = 'block';
+        document.getElementById('startDatePicker').style.display = 'none';
+    }, 200);
+}
+
+function updateStartDate(dateString) {
+    if (!dateString) {
+        disableDatePicker();
+        return;
+    }
+
+    // Create date object from input (treat as local date to avoid timezone shifts)
+    const parts = dateString.split('-');
+    const newDate = new Date(parts[0], parts[1] - 1, parts[2]); // Year, Month (0-based), Day
+
+    startDate = newDate.toISOString();
+
+    // Save and update UI
+    saveDataToFirestore();
+    updateStats();
+
+    // Switch back to text view
+    disableDatePicker();
+}
 
 function renderRoadmap() {
     const container = document.getElementById('roadmap-container');

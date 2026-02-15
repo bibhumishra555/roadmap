@@ -37,7 +37,8 @@
 
         <div class="stats stats-secondary">
             <div class="stat-card">
-                <div class="number" id="startDate">--</div>
+                <div class="number" id="startDate" onclick="enableDatePicker()" style="cursor: pointer;" title="Click to change start date">--</div>
+                <input type="date" id="startDatePicker" style="display: none;" onchange="updateStartDate(this.value)" onblur="disableDatePicker()">
                 <div class="label">Start Date</div>
             </div>
             <div class="stat-card">
