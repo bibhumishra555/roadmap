@@ -287,10 +287,11 @@ function calculateProjection(totalItems, completedItems) {
 
     const now = new Date();
     const timeDiff = now - start;
-    const daysElapsed = Math.max(timeDiff / (1000 * 3600 * 24), 0.0001);
+    // Use whole days, minimum 1 day, to avoid huge velocity spikes on day 1
+    const daysElapsed = Math.max(Math.ceil(timeDiff / (1000 * 3600 * 24)), 1);
 
-    if (daysElapsed < 0.001 || completedItems === 0) {
-        // If just started, velocity is skewed.
+    if (completedItems === 0) {
+        // If just started and nothing done
         startDateElem.textContent = start.toLocaleDateString();
         projectedDateElem.textContent = "Calculating...";
         velocityElem.textContent = "0";
