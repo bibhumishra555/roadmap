@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Permission Test</title>
+</head>
+
+<body>
+    <h1>Testing Permissions...</h1>
+    <div id="status">Testing...</div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpTprWpjNxEEwXbogmKbaux9s7TBCFK3I",
+            authDomain: "counter-010.firebaseapp.com",
+            projectId: "counter-010",
+            storageBucket: "counter-010.firebasestorage.app",
+            messagingSenderId: "395088944227",
+            appId: "1:395088944227:web:5ec6066d389ec4eaa92c56",
+            measurementId: "G-4MJX2M82EJ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function test() {
+            let log = "";
+            try {
+                // Test 1: Write to roadmap_users (should work)
+                await setDoc(doc(db, "roadmap_users", "test_write_permission"), {
+                    test: true,
+                    timestamp: new Date()
+                });
+                log += "✅ roadmap_users write ALLOWED.<br>";
+            } catch (e) {
+                log += "❌ roadmap_users write DENIED: " + e.message + "<br>";
+            }
+
+            try {
+                // Test 2: Write to roadmap_content (failed before)
+                await setDoc(doc(db, "roadmap_content", "test_write_permission"), {
+                    test: true,
+                    timestamp: new Date()
+                });
+                log += "✅ roadmap_content write ALLOWED.<br>";
+            } catch (e) {
+                log += "❌ roadmap_content write DENIED: " + e.message + "<br>";
+            }
+
+            document.getElementById('status').innerHTML = log;
+        }
+
+        test();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seed Roadmap Data</title>
+</head>
+
+<body>
+    <h1>Seeding Roadmap Data...</h1>
+    <div id="status">Initializing...</div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpTprWpjNxEEwXbogmKbaux9s7TBCFK3I",
+            authDomain: "counter-010.firebaseapp.com",
+            projectId: "counter-010",
+            storageBucket: "counter-010.firebasestorage.app",
+            messagingSenderId: "395088944227",
+            appId: "1:395088944227:web:5ec6066d389ec4eaa92c56",
+            measurementId: "G-4MJX2M82EJ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // The exact data from the original script.js
+        const roadmapData = [
+            {
+                id: 0,
+                title: "🟢 PHASE 0 — Foundation Mindset",
+                duration: "Week 0",
+                goal: "Understand what programming really is",
+                steps: [
+                    {
+                        id: "0-1",
+                        title: "Foundation Topics",
+                        duration: "⏳ 2–3 Days",
+                        topics: [
+                            "What is Programming?",
+                            "How Computer Works: CPU, Memory, Input/Output",
+                            "Why Java?",
+                            "How Java Runs Internally: Java Code → Compiler → Bytecode → JVM"
+                        ],
+                        practice: [
+                            "Print your name, age, goals"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 1,
+                title: "🧱 PHASE I — Core Java Basics",
+                duration: "Month 1–2",
+                goal: "Learn to \"speak\" Java fluently",
+                steps: [
+                    {
+                        id: "1-1",
+                        title: "Step 1: Setup + First Program",
+                        duration: "⏳ 2–3 Days",
+                        topics: [
+                            "Install JDK 21+",
+                            "IntelliJ IDEA Setup",
+                            "JVM vs JRE vs JDK",
+                            "Modern Java 25 Syntax (No boilerplate main)"
+                        ],
+                        practice: [
+                            "Hello World",
+                            "Simple output programs"
+                        ]
+                    },
+                    {
+                        id: "1-2",
+                        title: "Step 2: Variables & Data Types",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "Variables (labeled boxes)",
+                            "Primitive Types: int, double, char, boolean",
+                            "Non-Primitive: String, Arrays",
+                            "Wrapper Classes",
+                            "Type Conversion"
+                        ],
+                        practice: [
+                            "Store student data",
+                            "Swap numbers",
+                            "Temperature converter"
+                        ]
+                    },
+                    {
+                        id: "1-3",
+                        title: "Step 3: Input & Output",
+                        duration: "⏳ 3–4 Days",
+                        topics: [
+                            "Scanner class",
+                            "System.out.print / println",
+                            "Escape sequences"
+                        ],
+                        practice: [
+                            "Take name & age input",
+                            "Build a calculator"
+                        ]
+                    },
+                    {
+                        id: "1-4",
+                        title: "Step 4: Operators",
+                        duration: "⏳ 4–5 Days",
+                        topics: [
+                            "Arithmetic, Logical, Relational",
+                            "Assignment operators"
+                        ],
+                        practice: [
+                            "Sum of N numbers",
+                            "Find last digit",
+                            "Even/Odd checker"
+                        ]
+                    },
+                    {
+                        id: "1-5",
+                        title: "Step 5: Flow Control (Decision Making)",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "if / else",
+                            "switch",
+                            "Nested conditions"
+                        ],
+                        practice: [
+                            "Leap year",
+                            "Largest of 3 numbers",
+                            "Menu-based calculator"
+                        ]
+                    },
+                    {
+                        id: "1-6",
+                        title: "Step 6: Loops (Logic Building Starts)",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "for, while, do-while",
+                            "Nested loops"
+                        ],
+                        practice: [
+                            "Factorial",
+                            "Fibonacci",
+                            "Prime checker",
+                            "Pattern printing"
+                        ]
+                    },
+                    {
+                        id: "1-7",
+                        title: "Step 7: Methods (Functions)",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "Parameters & Return types",
+                            "Method overloading",
+                            "Breaking programs into reusable blocks"
+                        ],
+                        practice: [
+                            "Prime factorization",
+                            "GCD/LCM functions"
+                        ]
+                    },
+                    {
+                        id: "1-8",
+                        title: "Step 8: Arrays",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "1D Arrays",
+                            "2D Arrays",
+                            "Sorting basics"
+                        ],
+                        practice: [
+                            "Find average",
+                            "Count distinct elements",
+                            "Check sorted array"
+                        ]
+                    },
+                    {
+                        id: "1-9",
+                        title: "Step 9: Strings",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "String vs StringBuilder vs StringBuffer",
+                            "Palindrome, Reverse",
+                            "Pattern searching"
+                        ],
+                        practice: [
+                            "Word counter",
+                            "String compression"
+                        ]
+                    },
+                    {
+                        id: "p-1",
+                        isProject: true,
+                        title: "✅ Project 1: CLI Expense Manager",
+                        duration: "⏳ 1 Week",
+                        features: [
+                            "Add expense",
+                            "View expenses",
+                            "Delete expense",
+                            "Total calculation"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "🧩 PHASE II — Object-Oriented Engineering",
+                duration: "Month 3–4",
+                goal: "Think like a Software Engineer",
+                steps: [
+                    {
+                        id: "2-1",
+                        title: "Step 10: Classes & Objects",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "Class = Blueprint",
+                            "Object = Real instance",
+                            "Constructors",
+                            "this keyword",
+                            "static, final"
+                        ],
+                        practice: [
+                            "Student class",
+                            "Car class",
+                            "BankAccount class"
+                        ]
+                    },
+                    {
+                        id: "2-2",
+                        title: "Step 11: OOP Pillars (Most Important)",
+                        duration: "⏳ 3 Weeks",
+                        topics: [
+                            "Encapsulation",
+                            "Inheritance",
+                            "Polymorphism",
+                            "Abstraction",
+                            "Interfaces"
+                        ],
+                        practice: [
+                            "Vehicle system",
+                            "Employee hierarchy",
+                            "Library system"
+                        ],
+                        practiceLabel: "Practice Systems:"
+                    },
+                    {
+                        id: "2-3",
+                        title: "Step 12: Modern Java Records (2025 Standard)",
+                        duration: "⏳ 3–4 Days",
+                        topics: [
+                            "Records for clean data models",
+                            "Example: record User(String name, int age) {}"
+                        ]
+                    },
+                    {
+                        id: "2-4",
+                        title: "Step 13: Exception Handling",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "try-catch-finally",
+                            "throw vs throws",
+                            "Custom exceptions"
+                        ],
+                        practice: [
+                            "Banking exception system"
+                        ]
+                    },
+                    {
+                        id: "2-5",
+                        title: "Step 14: File Handling (Persistence)",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "FileReader/FileWriter",
+                            "BufferedReader",
+                            "Save program data"
+                        ],
+                        practice: [
+                            "Save expense manager data"
+                        ]
+                    },
+                    {
+                        id: "2-6",
+                        title: "Step 15: Multithreading Basics",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "Thread class",
+                            "Runnable interface",
+                            "Synchronization intro"
+                        ]
+                    },
+                    {
+                        id: "p-2",
+                        isProject: true,
+                        title: "✅ Project 2: Banking System (Console + File Storage)",
+                        duration: "⏳ 2 Weeks",
+                        features: [
+                            "Create account",
+                            "Deposit/Withdraw",
+                            "Transaction log",
+                            "Exception safety"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 3,
+                title: "🟣 PHASE III — Collections + Modern Java",
+                duration: "Month 5–6",
+                goal: "Become Professional in Data Handling",
+                steps: [
+                    {
+                        id: "3-1",
+                        title: "Step 16: Collections Framework",
+                        duration: "⏳ 4 Weeks",
+                        topicLabel: "Learn in Order:",
+                        topics: [
+                            "ArrayList",
+                            "LinkedList",
+                            "Stack",
+                            "Queue",
+                            "PriorityQueue",
+                            "Deque",
+                            "HashSet / TreeSet",
+                            "HashMap / TreeMap"
+                        ],
+                        practice: [
+                            "To-do list app",
+                            "Word frequency counter"
+                        ]
+                    },
+                    {
+                        id: "3-2",
+                        title: "Step 17: Comparator & Sorting",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "Comparable vs Comparator",
+                            "Sorting objects"
+                        ],
+                        practice: [
+                            "Sort students by marks"
+                        ]
+                    },
+                    {
+                        id: "3-3",
+                        title: "Step 18: Functional Programming (Streams)",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "Lambda expressions",
+                            "Stream API",
+                            "Filter, Map, Reduce"
+                        ],
+                        practice: [
+                            "Sum of even numbers using streams",
+                            "Employee salary processing"
+                        ]
+                    },
+                    {
+                        id: "p-3",
+                        isProject: true,
+                        title: "✅ Project 3: Library Management System",
+                        duration: "⏳ 2 Weeks",
+                        technology: "Collections + Streams"
+                    }
+                ]
+            },
+            {
+                id: 4,
+                title: "🌐 PHASE IV — Professional Java Development",
+                duration: "Month 7–8",
+                goal: "Build Real Web Applications",
+                steps: [
+                    {
+                        id: "4-1",
+                        title: "Step 19: Maven Build Tool",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "Dependencies",
+                            "Project structure",
+                            "Plugins"
+                        ]
+                    },
+                    {
+                        id: "4-2",
+                        title: "Step 20: Spring Boot 3.x (Gold Standard)",
+                        duration: "⏳ 3 Weeks",
+                        topics: [
+                            "REST APIs",
+                            "Controllers, Services",
+                            "JSON handling"
+                        ]
+                    },
+                    {
+                        id: "4-3",
+                        title: "Step 21: Databases (PostgreSQL)",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "SQL Basics",
+                            "JPA + Hibernate",
+                            "CRUD operations"
+                        ]
+                    },
+                    {
+                        id: "p-4",
+                        isProject: true,
+                        title: "✅ Project 4: Banking REST API",
+                        duration: "⏳ 3 Weeks",
+                        technology: "Spring Boot + PostgreSQL",
+                        features: [
+                            "Accounts",
+                            "Transfers",
+                            "Transaction history"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 5,
+                title: "⚡ PHASE V — Advanced Performance + AI",
+                duration: "Month 9–10",
+                goal: "Modern High-End Development",
+                steps: [
+                    {
+                        id: "5-1",
+                        title: "Step 22: Virtual Threads (Java 21+)",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            "Lightweight concurrency",
+                            "High-performance apps"
+                        ]
+                    },
+                    {
+                        id: "5-2",
+                        title: "Step 23: AI Integration (2025 Skill)",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "Spring AI / LangChain4j",
+                            "Connect GPT APIs",
+                            "AI-powered apps"
+                        ]
+                    },
+                    {
+                        id: "5-3",
+                        title: "Step 24: RAG Systems",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "AI answers using private documents",
+                            "Vector databases intro"
+                        ]
+                    },
+                    {
+                        id: "p-5",
+                        isProject: true,
+                        title: "✅ Project 5: AI Chat Assistant for Your App",
+                        duration: "⏳ 2 Weeks"
+                    }
+                ]
+            },
+            {
+                id: 6,
+                title: "🚢 PHASE VI — Architecture & Deployment",
+                duration: "Month 11–12",
+                goal: "Ship Like a Professional",
+                steps: [
+                    {
+                        id: "6-1",
+                        title: "Step 25: Docker + Kubernetes",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "Containerize apps",
+                            "Deploy anywhere"
+                        ]
+                    },
+                    {
+                        id: "6-2",
+                        title: "Step 26: Microservices Architecture",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            "Split big systems",
+                            "Service communication"
+                        ]
+                    },
+                    {
+                        id: "p-6",
+                        isProject: true,
+                        title: "✅ Final Capstone Project: Full E-Commerce Platform + AI Chatbot",
+                        duration: "⏳ 1 Month",
+                        modulesLabel: "Modules:",
+                        features: [
+                            "Product catalog",
+                            "Shopping cart",
+                            "Payment simulation",
+                            "AI customer assistant",
+                            "Deployment with Docker"
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        async function seed() {
+            try {
+                // Save to 'roadmap_content' collection, document 'main' (or 'v1')
+                await setDoc(doc(db, "roadmap_content", "main"), {
+                    phases: roadmapData,
+                    lastUpdated: new Date()
+                });
+                document.getElementById('status').innerText = "✅ Success: Roadmap data seeded to Firestore!";
+                console.log("Roadmap data seeded successfully.");
+            } catch (e) {
+                document.getElementById('status').innerText = "❌ Error: " + e.message;
+                console.error("Error seeding data:", e);
+            }
+        }
+
+        seed();
+    </script>
+</body>
+
+</html>

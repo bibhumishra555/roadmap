@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Mastery Roadmap Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☕ Java Mastery Roadmap</h1>
+            <p class="subtitle">Your Journey to Industry-Ready Java Developer</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">⏳ Total Duration: 10–12 Months | Daily Study: 2–3 Hours</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number" id="totalSteps">0</div>
+                <div class="label">Total Steps</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="completedSteps">0</div>
+                <div class="label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="remainingSteps">0</div>
+                <div class="label">Remaining</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="progressPercent">0%</div>
+                <div class="label">Progress</div>
+            </div>
+        </div>
+
+        <div class="stats stats-secondary">
+            <div class="stat-card">
+                <div class="number" id="startDate">--</div>
+                <div class="label">Start Date</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="projectedDate">--</div>
+                <div class="label">Projected Completion</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="velocity">0</div>
+                <div class="label">Items / Day</div>
+            </div>
+        </div>
+
+        <div style="padding: 0 40px;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar">0%</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Dynamic Roadmap Container -->
+            <div id="roadmap-container"></div>
+
+            <!-- Daily Routine (Static content as it doesn't change much) -->
+            <div class="daily-routine">
+                <h2>📌 Daily Study Routine (Best Strategy)</h2>
+                <table class="routine-table">
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Theory Reading</td>
+                            <td>30 min</td>
+                        </tr>
+                        <tr>
+                            <td>Coding Practice</td>
+                            <td>60–90 min</td>
+                        </tr>
+                        <tr>
+                            <td>Problem Solving</td>
+                            <td>30 min</td>
+                        </tr>
+                        <tr>
+                            <td>Revision</td>
+                            <td>15 min</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="reset-button" onclick="resetProgress()">🔄 Reset All Progress</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
