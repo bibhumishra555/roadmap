@@ -187,7 +187,22 @@ function renderRoadmap() {
                         <div class="topic-section">
                             <div class="topic-label">${label}</div>
                             <ul class="topics-list">
-                                ${step.topics.map(t => `<li>${t}</li>`).join('')}
+                                ${step.topics.map(t => {
+                        if (typeof t === 'string') {
+                            return `<li>${t}</li>`;
+                        } else {
+                            return `
+                                            <li>
+                                                <strong>${t.title}</strong>
+                                                ${t.subtopics && t.subtopics.length > 0 ? `
+                                                    <ul class="subtopics-list">
+                                                        ${t.subtopics.map(s => `<li>${s}</li>`).join('')}
+                                                    </ul>
+                                                ` : ''}
+                                            </li>
+                                        `;
+                        }
+                    }).join('')}
                             </ul>
                         </div>
                     `;

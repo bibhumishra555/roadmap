@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Seed Roadmap Data</title>
-    <link rel="icon" type="image/jpeg" href="IMG_20251215_152240.jpg">
+    <link rel="icon" type="image/jpeg" href="">
 </head>
 
 <body>
@@ -41,12 +41,44 @@
                         title: "Foundation Topics",
                         duration: "⏳ 2–3 Days",
                         topics: [
-                            "What is Programming?",
-                            "How Computer Works: CPU, Memory, Input/Output",
-                            "Why Java?",
-                            "How Java Runs Internally: Java Code → Compiler → Bytecode → JVM"
+                            {
+                                title: "What is Programming?",
+                                subtopics: [
+                                    "Instructions to Computer",
+                                    "High-level vs Low-level languages",
+                                    "Role of Compiler and Interpreter"
+                                ]
+                            },
+                            {
+                                title: "How Computer Works",
+                                subtopics: [
+                                    "CPU: Fetch-Decode-Execute Cycle",
+                                    "Memory: RAM vs Storage (HDD/SSD)",
+                                    "Input/Output Devices"
+                                ]
+                            },
+                            {
+                                title: "Why Java?",
+                                subtopics: [
+                                    "Platform Independence (WORA)",
+                                    "Object-Oriented Nature",
+                                    "Security and Robustness",
+                                    "Large Ecosystem and Community"
+                                ]
+                            },
+                            {
+                                title: "Java Internal Architecture",
+                                subtopics: [
+                                    "Java Development Kit (JDK)",
+                                    "Java Runtime Environment (JRE)",
+                                    "Java Virtual Machine (JVM)",
+                                    "JIT Compiler",
+                                    "Bytecode (.class files)"
+                                ]
+                            }
                         ],
                         practice: [
+                            "Install Java and verify version",
                             "Print your name, age, goals"
                         ]
                     }
@@ -63,14 +95,34 @@
                         title: "Step 1: Setup + First Program",
                         duration: "⏳ 2–3 Days",
                         topics: [
-                            "Install JDK 21+",
-                            "IntelliJ IDEA Setup",
-                            "JVM vs JRE vs JDK",
-                            "Modern Java 25 Syntax (No boilerplate main)"
+                            {
+                                title: "Environment Setup",
+                                subtopics: [
+                                    "Downloading and Installing JDK 21+",
+                                    "Setting Environment Variables (PATH)",
+                                    "Installing IntelliJ IDEA (Community Edition)"
+                                ]
+                            },
+                            {
+                                title: "Your First Java Program",
+                                subtopics: [
+                                    "Structure of a Java Program (Class, Main method)",
+                                    "Writing and compiling Hello World",
+                                    "Running Java programs via CLI",
+                                    "Comments in Java (Single-line, Multi-line, Javadoc)"
+                                ]
+                            },
+                            {
+                                title: "Modern Java Syntax",
+                                subtopics: [
+                                    "Implicitly Declared Classes (Java 21 Preview/Standard in 25)",
+                                    "Instance Main Methods"
+                                ]
+                            }
                         ],
                         practice: [
                             "Hello World",
-                            "Simple output programs"
+                            "Simple calculation output programs"
                         ]
                     },
                     {
@@ -78,16 +130,46 @@
                         title: "Step 2: Variables & Data Types",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "Variables (labeled boxes)",
-                            "Primitive Types: int, double, char, boolean",
-                            "Non-Primitive: String, Arrays",
-                            "Wrapper Classes",
-                            "Type Conversion"
+                            {
+                                title: "Variables",
+                                subtopics: [
+                                    "Declaration and Initialization",
+                                    "Naming Conventions (CamelCase)",
+                                    "Scope of Variables (Local, Instance, Static)"
+                                ]
+                            },
+                            {
+                                title: "Primitive Data Types",
+                                subtopics: [
+                                    "Integer types: byte, short, int, long",
+                                    "Floating-point types: float, double",
+                                    "Character type: char",
+                                    "Boolean type: boolean",
+                                    "Default values and Memory sizes"
+                                ]
+                            },
+                            {
+                                title: "Non-Primitive / Reference Types",
+                                subtopics: [
+                                    "difference between Primitive and Reference",
+                                    "String Basics",
+                                    "Arrays Basics"
+                                ]
+                            },
+                            {
+                                title: "Type System",
+                                subtopics: [
+                                    "Strongly Typed Language",
+                                    "Static Typing",
+                                    "Type Casting (Implicit/Widening vs Explicit/Narrowing)",
+                                    "Wrapper Classes (Integer, Double, etc.) & Autoboxing/Unboxing"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Store student data",
-                            "Swap numbers",
-                            "Temperature converter"
+                            "Store student data (name, age, grade)",
+                            "Swap two numbers (with and without temp variable)",
+                            "Temperature converter (Celsius to Fahrenheit)"
                         ]
                     },
                     {
@@ -95,13 +177,28 @@
                         title: "Step 3: Input & Output",
                         duration: "⏳ 3–4 Days",
                         topics: [
-                            "Scanner class",
-                            "System.out.print / println",
-                            "Escape sequences"
+                            {
+                                title: "Console Output",
+                                subtopics: [
+                                    "System.out.print()",
+                                    "System.out.println()",
+                                    "System.out.printf() / format()",
+                                    "Escape sequences (\\n, \\t, \\\", \\\\)"
+                                ]
+                            },
+                            {
+                                title: "Console Input (Scanner)",
+                                subtopics: [
+                                    "Importing java.util.Scanner",
+                                    "Creating Scanner object",
+                                    "Reading different types: nextInt(), nextDouble(), nextLine(), next()",
+                                    "Handling Scanner issues (nextInt followed by nextLine)"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Take name & age input",
-                            "Build a calculator"
+                            "Take name & age input and greet",
+                            "Build a simple 2-number calculator"
                         ]
                     },
                     {
@@ -109,13 +206,40 @@
                         title: "Step 4: Operators",
                         duration: "⏳ 4–5 Days",
                         topics: [
-                            "Arithmetic, Logical, Relational",
-                            "Assignment operators"
+                            {
+                                title: "Arithmetic Operators",
+                                subtopics: ["+, -, *, /, % (Modulus)", "Precedence and Associativity"]
+                            },
+                            {
+                                title: "Unary Operators",
+                                subtopics: ["++ (Increment), -- (Decrement)", "Prefix vs Postfix"]
+                            },
+                            {
+                                title: "Relational (Comparison) Operators",
+                                subtopics: ["==, !=, >, <, >=, <="]
+                            },
+                            {
+                                title: "Logical Operators",
+                                subtopics: ["&& (AND), || (OR), ! (NOT)", "Short-circuit evaluation"]
+                            },
+                            {
+                                title: "Assignment Operators",
+                                subtopics: ["=, +=, -=, *=, /=, %="]
+                            },
+                            {
+                                title: "Ternary Operator",
+                                subtopics: ["condition ? trueValue : falseValue"]
+                            },
+                            {
+                                title: "Bitwise Operators (Optional for verify basics)",
+                                subtopics: ["&, |, ^, ~, <<, >>, >>>"]
+                            }
                         ],
                         practice: [
-                            "Sum of N numbers",
-                            "Find last digit",
-                            "Even/Odd checker"
+                            "Sum of N numbers formula",
+                            "Find last digit of a number",
+                            "Even/Odd checker using Modulus",
+                            "Max of 2 numbers using Ternary"
                         ]
                     },
                     {
@@ -123,29 +247,63 @@
                         title: "Step 5: Flow Control (Decision Making)",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "if / else",
-                            "switch",
-                            "Nested conditions"
+                            {
+                                title: "if-else Statements",
+                                subtopics: ["if", "if-else", "if-else-if ladder", "Nested if"]
+                            },
+                            {
+                                title: "Switch Statement",
+                                subtopics: [
+                                    "Classic switch",
+                                    "break keyword",
+                                    "default case",
+                                    "Switch Constraints (supported types)"
+                                ]
+                            },
+                            {
+                                title: "Modern Switch (Java 12+)",
+                                subtopics: [
+                                    "Switch Expressions (yield / -> syntax)",
+                                    "Pattern Matching in Switch (Java 17/21)"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Leap year",
+                            "Leap year checker",
                             "Largest of 3 numbers",
-                            "Menu-based calculator"
+                            "Grade calculator",
+                            "Menu-based calculator using Switch"
                         ]
                     },
                     {
                         id: "1-6",
-                        title: "Step 6: Loops (Logic Building Starts)",
+                        title: "Step 6: Loops (Iterative Control)",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "for, while, do-while",
-                            "Nested loops"
+                            {
+                                title: "Types of Loops",
+                                subtopics: [
+                                    "for loop (for know iterations)",
+                                    "while loop (entry controlled)",
+                                    "do-while loop (exit controlled)",
+                                    "Infinite loops"
+                                ]
+                            },
+                            {
+                                title: "Loop Control Statements",
+                                subtopics: ["break", "continue", "Labeled loops"]
+                            },
+                            {
+                                title: "Nested Loops",
+                                subtopics: ["Loop inside a loop", "Usage in patterns / matrix"]
+                            }
                         ],
                         practice: [
-                            "Factorial",
-                            "Fibonacci",
-                            "Prime checker",
-                            "Pattern printing"
+                            "Factorial of a number",
+                            "Fibonacci Series",
+                            "Check Prime Number",
+                            "Reverse a number",
+                            "Star Patterns (Pyramid, Diamond, etc.)"
                         ]
                     },
                     {
@@ -153,13 +311,36 @@
                         title: "Step 7: Methods (Functions)",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "Parameters & Return types",
-                            "Method overloading",
-                            "Breaking programs into reusable blocks"
+                            {
+                                title: "Method Basics",
+                                subtopics: [
+                                    "Definition and Declaration",
+                                    "Calling a method",
+                                    "Return Statements",
+                                    "Parameters vs Arguments"
+                                ]
+                            },
+                            {
+                                title: "Method Types",
+                                subtopics: ["Static vs Instance methods", "Void vs Non-void methods"]
+                            },
+                            {
+                                title: "Method Overloading",
+                                subtopics: ["Same name, different parameters", "Compile-time Polymorphism"]
+                            },
+                            {
+                                title: "Scope and Lifetime",
+                                subtopics: ["Method Scope", "Block Scope", "Stack Memory basics"]
+                            },
+                            {
+                                title: "Recursion",
+                                subtopics: ["Base case", "Recursive calls", "Stack Overflow Error"]
+                            }
                         ],
                         practice: [
-                            "Prime factorization",
-                            "GCD/LCM functions"
+                            "Prime factorization function",
+                            "GCD/LCM functions",
+                            "Factorial using Recursion"
                         ]
                     },
                     {
@@ -167,14 +348,37 @@
                         title: "Step 8: Arrays",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "1D Arrays",
-                            "2D Arrays",
-                            "Sorting basics"
+                            {
+                                title: "1D Arrays",
+                                subtopics: [
+                                    "Declaration and Instantiation",
+                                    "Initialization (static/dynamic)",
+                                    "Accessing elements by index",
+                                    "Length property",
+                                    "Iterating (Traditional for, Enhanced for-each)"
+                                ]
+                            },
+                            {
+                                title: "Multidimensional Arrays",
+                                subtopics: [
+                                    "2D Arrays (Matrix representation)",
+                                    "Jagged Arrays"
+                                ]
+                            },
+                            {
+                                title: "Array Operations",
+                                subtopics: [
+                                    "Copying arrays (System.arraycopy, Arrays.copyOf)",
+                                    "Utility Class: java.util.Arrays (sort, toString, binarySearch, fill)"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Find average",
+                            "Find sum/average of array",
+                            "Find max/min element",
                             "Count distinct elements",
-                            "Check sorted array"
+                            "Check if array is sorted",
+                            "Matrix addition/transposition"
                         ]
                     },
                     {
@@ -182,13 +386,38 @@
                         title: "Step 9: Strings",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "String vs StringBuilder vs StringBuffer",
-                            "Palindrome, Reverse",
-                            "Pattern searching"
+                            {
+                                title: "String Basics",
+                                subtopics: [
+                                    "Immutability of String",
+                                    "String Constant Pool vs Heap",
+                                    "String Literals vs new String()"
+                                ]
+                            },
+                            {
+                                title: "String Methods",
+                                subtopics: [
+                                    "length(), charAt(), substring()",
+                                    "indexOf(), lastIndexOf()",
+                                    "equals() vs ==",
+                                    "compareTo()",
+                                    "toLowerCase(), toUpperCase(), trim(), strip()"
+                                ]
+                            },
+                            {
+                                title: "Mutable Strings",
+                                subtopics: [
+                                    "StringBuilder (Non-synchronized, Fast)",
+                                    "StringBuffer (Synchronized, Thread-safe)",
+                                    "append(), insert(), delete(), reverse()"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Word counter",
-                            "String compression"
+                            "Count vowels/consonants",
+                            "Check Palindrome",
+                            "Reverse words in a sentence",
+                            "String compression (a3b2c1)"
                         ]
                     },
                     {
@@ -197,10 +426,11 @@
                         title: "✅ Project 1: CLI Expense Manager",
                         duration: "⏳ 1 Week",
                         features: [
-                            "Add expense",
-                            "View expenses",
-                            "Delete expense",
-                            "Total calculation"
+                            "Add expense (amount, category, description)",
+                            "View all expenses",
+                            "Delete expense by ID",
+                            "Calculate Total Expenses",
+                            "Filter by Category (optional)"
                         ]
                     }
                 ]
@@ -213,46 +443,118 @@
                 steps: [
                     {
                         id: "2-1",
-                        title: "Step 10: Classes & Objects",
+                        title: "Step 10: Classes, Objects & Constructors",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "Class = Blueprint",
-                            "Object = Real instance",
-                            "Constructors",
-                            "this keyword",
-                            "static, final"
+                            {
+                                title: "OOP Basics",
+                                subtopics: ["Class as a Blueprint", "Object as an Instance"]
+                            },
+                            {
+                                title: "Class Members",
+                                subtopics: ["Instance Variables (Fields)", "Methods"]
+                            },
+                            {
+                                title: "Constructors",
+                                subtopics: [
+                                    "Default Constructor",
+                                    "Parameterized Constructor",
+                                    "Constructor Overloading",
+                                    "Copy Constructor"
+                                ]
+                            },
+                            {
+                                title: "Keywords",
+                                subtopics: [
+                                    "this keyword (referring current object)",
+                                    "new keyword (memory allocation)",
+                                    "static keyword (class level members)",
+                                    "final keyword (constants, non-inheritable)"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Student class",
-                            "Car class",
-                            "BankAccount class"
+                            "Student class with marks and grade calculation",
+                            "BankAccount class with deposit/withdraw",
+                            "Employee class with salary calculation"
                         ]
                     },
                     {
                         id: "2-2",
-                        title: "Step 11: OOP Pillars (Most Important)",
+                        title: "Step 11: OOP Pillars (The Core)",
                         duration: "⏳ 3 Weeks",
                         topics: [
-                            "Encapsulation",
-                            "Inheritance",
-                            "Polymorphism",
-                            "Abstraction",
-                            "Interfaces"
+                            {
+                                title: "Encapsulation",
+                                subtopics: [
+                                    "Data Hiding",
+                                    "Access Modifiers (private, default, protected, public)",
+                                    "Getters and Setters (Accessors and Mutators)",
+                                    "JavaBean Standard"
+                                ]
+                            },
+                            {
+                                title: "Inheritance",
+                                subtopics: [
+                                    "is-a relationship",
+                                    "extends keyword",
+                                    "Single, Multilevel, Hierarchical Inheritance",
+                                    "super keyword",
+                                    "Method Overriding",
+                                    "Constructor Chaining"
+                                ]
+                            },
+                            {
+                                title: "Polymorphism",
+                                subtopics: [
+                                    "Compile-time (Overloading) - Recap",
+                                    "Runtime (Overriding) - Dynamic Method Dispatch",
+                                    "Upcasting and Downcasting",
+                                    "instanceof operator"
+                                ]
+                            },
+                            {
+                                title: "Abstraction",
+                                subtopics: [
+                                    "Abstract Classes (abstract keyword)",
+                                    "Abstract Methods",
+                                    "When to use Abstract class"
+                                ]
+                            },
+                            {
+                                title: "Interfaces",
+                                subtopics: [
+                                    "interface keyword",
+                                    "implements keyword",
+                                    "Multiple Inheritance via Interfaces",
+                                    "Default and Static methods in interfaces (Java 8+)",
+                                    "Private methods in interfaces (Java 9+)",
+                                    "Abstract class vs Interface"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Vehicle system",
-                            "Employee hierarchy",
-                            "Library system"
+                            "Vehicle system (Car, Bike extends Vehicle)",
+                            "Shape hierarchy (Circle, Rectangle impl Shape)",
+                            "Payment Gateway System (CreditCard, UPI impl PaymentStrategy)"
                         ],
                         practiceLabel: "Practice Systems:"
                     },
                     {
                         id: "2-3",
-                        title: "Step 12: Modern Java Records (2025 Standard)",
+                        title: "Step 12: Modern Java Records",
                         duration: "⏳ 3–4 Days",
                         topics: [
-                            "Records for clean data models",
-                            "Example: record User(String name, int age) {}"
+                            {
+                                title: "Records (Java 14/16+)",
+                                subtopics: [
+                                    "Immutable Data Carriers",
+                                    "Canonical Constructor",
+                                    "Compact Constructor",
+                                    "Difference from regular Classes/Lombok",
+                                    "Example: record User(String name, int age) {}"
+                                ]
+                            }
                         ]
                     },
                     {
@@ -260,35 +562,104 @@
                         title: "Step 13: Exception Handling",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "try-catch-finally",
-                            "throw vs throws",
-                            "Custom exceptions"
+                            {
+                                title: "Exception Hierarchy",
+                                subtopics: ["Throwable", "Error vs Exception", "Checked vs Unchecked (Runtime) Exceptions"]
+                            },
+                            {
+                                title: "Handling Exceptions",
+                                subtopics: [
+                                    "try-catch block",
+                                    "Multiple catch blocks",
+                                    "finally block",
+                                    "try-with-resources (Automatic Resource Management)"
+                                ]
+                            },
+                            {
+                                title: "Declaring Exceptions",
+                                subtopics: ["throws keyword", "Difference between throw and throws"]
+                            },
+                            {
+                                title: "Custom Exceptions",
+                                subtopics: ["Creating user-defined exception classes"]
+                            }
                         ],
                         practice: [
-                            "Banking exception system"
+                            "Division by zero handling",
+                            "Banking system (InsufficientFundsException)"
                         ]
                     },
                     {
                         id: "2-5",
-                        title: "Step 14: File Handling (Persistence)",
+                        title: "Step 14: File Handling (I/O)",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "FileReader/FileWriter",
-                            "BufferedReader",
-                            "Save program data"
+                            {
+                                title: "Basic File I/O",
+                                subtopics: [
+                                    "File Class (Metadata)",
+                                    "FileWriter / FileReader (Character Stream)",
+                                ]
+                            },
+                            {
+                                title: "Buffered I/O",
+                                subtopics: [
+                                    "BufferedReader / BufferedWriter",
+                                    "Performance benefits"
+                                ]
+                            },
+                            {
+                                title: "Serialization",
+                                subtopics: [
+                                    "Serializable interface",
+                                    "ObjectOutputStream / ObjectInputStream",
+                                    "transient keyword"
+                                ]
+                            },
+                            {
+                                title: "Modern NIO.2 (Files Class)",
+                                subtopics: [
+                                    "Files.readString() / writeString()",
+                                    "Path and Paths"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Save expense manager data"
+                            "Word count in a text file",
+                            "Save/Load Expense Manager data to file"
                         ]
                     },
                     {
                         id: "2-6",
-                        title: "Step 15: Multithreading Basics",
+                        title: "Step 15: Multithreading & Concurrency Basics",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "Thread class",
-                            "Runnable interface",
-                            "Synchronization intro"
+                            {
+                                title: "Thread Basics",
+                                subtopics: [
+                                    "Process vs Thread",
+                                    "Main Thread",
+                                    "Thread Lifecycle (States)"
+                                ]
+                            },
+                            {
+                                title: "Creating Threads",
+                                subtopics: [
+                                    "Extending Thread class",
+                                    "Implementing Runnable interface"
+                                ]
+                            },
+                            {
+                                title: "Thread Control",
+                                subtopics: ["sleep()", "join()", "yield()", "Priority"]
+                            },
+                            {
+                                title: "Synchronization (Intro)",
+                                subtopics: [
+                                    "Race Conditions",
+                                    "synchronized keyword (method / block)"
+                                ]
+                            }
                         ]
                     },
                     {
@@ -297,10 +668,11 @@
                         title: "✅ Project 2: Banking System (Console + File Storage)",
                         duration: "⏳ 2 Weeks",
                         features: [
-                            "Create account",
-                            "Deposit/Withdraw",
-                            "Transaction log",
-                            "Exception safety"
+                            "Create Account (Save to file)",
+                            "Login / Authentication",
+                            "Deposit / Withdraw (Synchronized)",
+                            "Transaction History Log",
+                            "Exception handling for invalid inputs"
                         ]
                     }
                 ]
@@ -317,44 +689,112 @@
                         duration: "⏳ 4 Weeks",
                         topicLabel: "Learn in Order:",
                         topics: [
-                            "ArrayList",
-                            "LinkedList",
-                            "Stack",
-                            "Queue",
-                            "PriorityQueue",
-                            "Deque",
-                            "HashSet / TreeSet",
-                            "HashMap / TreeMap"
+                            {
+                                title: "Collection Hierarchy",
+                                subtopics: ["Iterable -> Collection -> List, Set, Queue"]
+                            },
+                            {
+                                title: "List Interface",
+                                subtopics: [
+                                    "ArrayList (Dynamic Array)",
+                                    "LinkedList (Doubly Linked List)",
+                                    "Vector & Stack (Legacy)"
+                                ]
+                            },
+                            {
+                                title: "Set Interface",
+                                subtopics: [
+                                    "HashSet (Unordered, Hashing)",
+                                    "LinkedHashSet (Ordered)",
+                                    "TreeSet (Sorted, Red-Black Tree)"
+                                ]
+                            },
+                            {
+                                title: "Queue / Deque",
+                                subtopics: [
+                                    "PriorityQueue",
+                                    "ArrayDeque"
+                                ]
+                            },
+                            {
+                                title: "Map Interface (Key-Value)",
+                                subtopics: [
+                                    "HashMap",
+                                    "LinkedHashMap",
+                                    "TreeMap",
+                                    "Hashtable (Legacy)",
+                                    "Internal working of HashMap (Buckets, Collisions)"
+                                ]
+                            },
+                            {
+                                title: "Iterator & Collections Class",
+                                subtopics: ["Fail-fast vs Fail-safe iterators", "Collections utility methods"]
+                            }
                         ],
                         practice: [
-                            "To-do list app",
-                            "Word frequency counter"
+                            "To-do list app using ArrayList",
+                            "Remove duplicates from list using Set",
+                            "Frequency counter using HashMap"
                         ]
                     },
                     {
                         id: "3-2",
-                        title: "Step 17: Comparator & Sorting",
+                        title: "Step 17: Generics & Sorting",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "Comparable vs Comparator",
-                            "Sorting objects"
+                            {
+                                title: "Generics",
+                                subtopics: [
+                                    "Type Safety",
+                                    "Generic Classes and Methods",
+                                    "Wildcards (?)",
+                                    "Bounded Type Parameters"
+                                ]
+                            },
+                            {
+                                title: "Sorting Custom Objects",
+                                subtopics: [
+                                    "Comparable Interface (Natural ordering)",
+                                    "Comparator Interface (Custom ordering)",
+                                    "Collections.sort()"
+                                ]
+                            }
                         ],
                         practice: [
-                            "Sort students by marks"
+                            "Sort students by marks/name",
+                            "Generic Pair<K,V> class"
                         ]
                     },
                     {
                         id: "3-3",
-                        title: "Step 18: Functional Programming (Streams)",
+                        title: "Step 18: Functional Programming (Java 8+)",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "Lambda expressions",
-                            "Stream API",
-                            "Filter, Map, Reduce"
+                            {
+                                title: "Lambda Expressions",
+                                subtopics: ["Functional Interfaces", "Syntax (params) -> { body }", "Method References (::)"]
+                            },
+                            {
+                                title: "Functional Interfaces",
+                                subtopics: ["Predicate", "Consumer", "Supplier", "Function", "UnaryOperator"]
+                            },
+                            {
+                                title: "Stream API",
+                                subtopics: [
+                                    "Creation of Streams",
+                                    "Intermediate Ops: filter, map, distinct, sorted, limit",
+                                    "Terminal Ops: collect, forEach, reduce, count, anyMatch"
+                                ]
+                            },
+                            {
+                                title: "Optional Class",
+                                subtopics: ["Avoiding NullPointerException in modern Java"]
+                            }
                         ],
                         practice: [
-                            "Sum of even numbers using streams",
-                            "Employee salary processing"
+                            "Filter list of Employees by salary",
+                            "Sum of list using reduce",
+                            "Group objects using Collectors.groupingBy"
                         ]
                     },
                     {
@@ -362,7 +802,14 @@
                         isProject: true,
                         title: "✅ Project 3: Library Management System",
                         duration: "⏳ 2 Weeks",
-                        technology: "Collections + Streams"
+                        technology: "Collections + Streams",
+                        features: [
+                            "Add/Remove Books",
+                            "Register/Remove Members",
+                            "Issue/Return Book",
+                            "Search Books by Title/Author (Streams)",
+                            "Sort Books by Category (Comparator)"
+                        ]
                     }
                 ]
             },
@@ -374,32 +821,79 @@
                 steps: [
                     {
                         id: "4-1",
-                        title: "Step 19: Maven Build Tool",
+                        title: "Step 19: Build Tools (Maven)",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "Dependencies",
-                            "Project structure",
-                            "Plugins"
+                            {
+                                title: "Why Build Tools?",
+                                subtopics: ["Dependency Management", "Build Automation"]
+                            },
+                            {
+                                title: "Maven",
+                                subtopics: [
+                                    "pom.xml structure",
+                                    "Dependencies and Repositories",
+                                    "Maven Lifecycle (clean, compile, test, package, install)",
+                                    "Plugins"
+                                ]
+                            }
                         ]
                     },
                     {
                         id: "4-2",
-                        title: "Step 20: Spring Boot 3.x (Gold Standard)",
+                        title: "Step 20: Spring Boot 3.x (The Gold Standard)",
                         duration: "⏳ 3 Weeks",
                         topics: [
-                            "REST APIs",
-                            "Controllers, Services",
-                            "JSON handling"
+                            {
+                                title: "Spring Core Concepts",
+                                subtopics: [
+                                    "Inversion of Control (IoC)",
+                                    "Dependency Injection (DI)",
+                                    "ApplicationContext",
+                                    "Beans and Scopes"
+                                ]
+                            },
+                            {
+                                title: "Spring Boot Basics",
+                                subtopics: [
+                                    "Starters",
+                                    "Auto-configuration",
+                                    "Embedded Server (Tomcat)",
+                                    "application.properties / yml"
+                                ]
+                            },
+                            {
+                                title: "Spring MVC (Web)",
+                                subtopics: [
+                                    "REST Architecture",
+                                    "@RestController, @RequestMapping",
+                                    "@GetMapping, @PostMapping, etc.",
+                                    "@RequestBody, @PathVariable, @RequestParam"
+                                ]
+                            }
                         ]
                     },
                     {
                         id: "4-3",
-                        title: "Step 21: Databases (PostgreSQL)",
+                        title: "Step 21: Databases & ORM",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "SQL Basics",
-                            "JPA + Hibernate",
-                            "CRUD operations"
+                            {
+                                title: "Relational Database (PostgreSQL)",
+                                subtopics: ["Tables", "Primary/Foreign Keys", "Basic SQL Queries"]
+                            },
+                            {
+                                title: "JPA & Hibernate",
+                                subtopics: [
+                                    "Object-Relational Mapping (ORM)",
+                                    "Entities (@Entity, @Id, @Column)",
+                                    "Spring Data JPA (Repository Interface)"
+                                ]
+                            },
+                            {
+                                title: "Transactions",
+                                subtopics: ["@Transactional", "ACID Properties"]
+                            }
                         ]
                     },
                     {
@@ -409,9 +903,11 @@
                         duration: "⏳ 3 Weeks",
                         technology: "Spring Boot + PostgreSQL",
                         features: [
-                            "Accounts",
-                            "Transfers",
-                            "Transaction history"
+                            "User Registration/Login (Spring Security Basics)",
+                            "Create Account API",
+                            "Transfer Money API (Transactional)",
+                            "Get Account Balance API",
+                            "Validation / Exception Handling (@ControllerAdvice)"
                         ]
                     }
                 ]
@@ -424,37 +920,72 @@
                 steps: [
                     {
                         id: "5-1",
-                        title: "Step 22: Virtual Threads (Java 21+)",
+                        title: "Step 22: Advanced Concurrency",
                         duration: "⏳ 1 Week",
                         topics: [
-                            "Lightweight concurrency",
-                            "High-performance apps"
+                            {
+                                title: "Executor Framework",
+                                subtopics: ["Thread Pools", "Future / CompletableFuture"]
+                            },
+                            {
+                                title: "Virtual Threads (Project Loom - Java 21)",
+                                subtopics: [
+                                    "Platform vs Virtual Threads",
+                                    "High-throughput concurrency",
+                                    "Structured Concurrency (Preview)"
+                                ]
+                            }
                         ]
                     },
                     {
                         id: "5-2",
-                        title: "Step 23: AI Integration (2025 Skill)",
+                        title: "Step 23: AI Integration",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "Spring AI / LangChain4j",
-                            "Connect GPT APIs",
-                            "AI-powered apps"
+                            {
+                                title: "LLM Basics",
+                                subtopics: ["Prompts", "Context", "Tokens"]
+                            },
+                            {
+                                title: "Spring AI / LangChain4j",
+                                subtopics: [
+                                    "Integrating OpenAI / Gemini APIs",
+                                    "ChatClient / ChatModel",
+                                    "Prompt Templates"
+                                ]
+                            }
                         ]
                     },
                     {
                         id: "5-3",
-                        title: "Step 24: RAG Systems",
+                        title: "Step 24: RAG (Retrieval Augmented Generation)",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "AI answers using private documents",
-                            "Vector databases intro"
+                            {
+                                title: "Vector Databases",
+                                subtopics: ["Embeddings", "Similarity Search"]
+                            },
+                            {
+                                title: "RAG Pipeline",
+                                subtopics: [
+                                    "Document Loading",
+                                    "Splitting/Chunking",
+                                    "Embedding & Storage",
+                                    "Retrieval & Generation"
+                                ]
+                            }
                         ]
                     },
                     {
                         id: "p-5",
                         isProject: true,
                         title: "✅ Project 5: AI Chat Assistant for Your App",
-                        duration: "⏳ 2 Weeks"
+                        duration: "⏳ 2 Weeks",
+                        features: [
+                            "Chat endpoint",
+                            "Context Awareness",
+                            "Custom knowledge base from text files"
+                        ]
                     }
                 ]
             },
@@ -466,34 +997,50 @@
                 steps: [
                     {
                         id: "6-1",
-                        title: "Step 25: Docker + Kubernetes",
+                        title: "Step 25: Docker & Containerization",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "Containerize apps",
-                            "Deploy anywhere"
+                            {
+                                title: "Docker Basics",
+                                subtopics: ["Images vs Containers", "Dockerfile", "Docker Compose"]
+                            },
+                            {
+                                title: "Containerizing Java Apps",
+                                subtopics: ["Multi-stage builds", "Optimizing image size (JLink)"]
+                            }
                         ]
                     },
                     {
                         id: "6-2",
-                        title: "Step 26: Microservices Architecture",
+                        title: "Step 26: Microservices (Bonus)",
                         duration: "⏳ 2 Weeks",
                         topics: [
-                            "Split big systems",
-                            "Service communication"
+                            {
+                                title: "Monolith vs Microservices",
+                                subtopics: ["Pros and Cons", "Decomposition strategies"]
+                            },
+                            {
+                                title: "Communication",
+                                subtopics: ["REST (Synchronous)", "Kafka/RabbitMQ (Asynchronous)"]
+                            },
+                            {
+                                title: "Service Discovery & Gateway",
+                                subtopics: ["Eureka / Consul", "Spring Cloud Gateway"]
+                            }
                         ]
                     },
                     {
                         id: "p-6",
                         isProject: true,
-                        title: "✅ Final Capstone Project: Full E-Commerce Platform + AI Chatbot",
+                        title: "✅ Final Capstone Project: E-Commerce Platform",
                         duration: "⏳ 1 Month",
                         modulesLabel: "Modules:",
                         features: [
-                            "Product catalog",
-                            "Shopping cart",
-                            "Payment simulation",
-                            "AI customer assistant",
-                            "Deployment with Docker"
+                            "User Service (Auth)",
+                            "Product Service (Catalog)",
+                            "Order Service (Transactions)",
+                            "AI Customer Support Bot",
+                            "Deployed on Cloud (AWS/Render) with Docker"
                         ]
                     }
                 ]
