@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seed Python Roadmap Data</title>
+</head>
+
+<body>
+    <h1>Seeding Python Roadmap Data...</h1>
+    <div id="status">Initializing...</div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpTprWpjNxEEwXbogmKbaux9s7TBCFK3I",
+            authDomain: "counter-010.firebaseapp.com",
+            projectId: "counter-010",
+            storageBucket: "counter-010.firebasestorage.app",
+            messagingSenderId: "395088944227",
+            appId: "1:395088944227:web:5ec6066d389ec4eaa92c56",
+            measurementId: "G-4MJX2M82EJ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const roadmapData = [
+            {
+                id: 0,
+                title: "🟢 PHASE 0 — Programming Foundations",
+                duration: "Weeks 1-2",
+                goal: "Understand how programming works",
+                steps: [
+                    {
+                        id: "0-1",
+                        title: "Core Concepts",
+                        duration: "⏳ 2–3 Days",
+                        topics: [
+                            {
+                                title: "What is programming",
+                                subtopics: [
+                                    "Instructions to Computer",
+                                    "How Python works (interpreter, runtime)",
+                                    "Python interpreter vs compiler"
+                                ]
+                            },
+                            {
+                                title: "Environment Setup",
+                                subtopics: [
+                                    "Installing Python",
+                                    "Using IDEs (Visual Studio Code, PyCharm)",
+                                    "Jupyter Notebook basics"
+                                ]
+                            }
+                        ],
+                        practice: [
+                            "Install Python and verify version",
+                            "Run your first Python script"
+                        ]
+                    },
+                    {
+                        id: "0-2",
+                        title: "Syntax Basics",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Variables and Data Types",
+                                subtopics: [
+                                    "Variables & naming rules",
+                                    "int, float, complex, str, bool, NoneType",
+                                    "Dynamic typing",
+                                    "Type conversion & checking (type(), isinstance())"
+                                ]
+                            },
+                            {
+                                title: "Operators",
+                                subtopics: [
+                                    "Arithmetic, Comparison, Assignment",
+                                    "Logical, Bitwise, Identity, Membership operators"
+                                ]
+                            },
+                            {
+                                title: "Input / Output",
+                                subtopics: [
+                                    "print() & input()",
+                                    "Formatting: f-strings, .format(), % formatting"
+                                ]
+                            },
+                            {
+                                title: "Comments & Style",
+                                subtopics: [
+                                    "Single-line / Multi-line comments",
+                                    "Docstrings",
+                                    "Indentation rules & PEP-8"
+                                ]
+                            }
+                        ],
+                        practice: [
+                            "Calculator program",
+                            "Unit converter"
+                        ]
+                    },
+                    {
+                        id: "0-3",
+                        title: "Control Flow",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Conditional Statements",
+                                subtopics: [
+                                    "if, if-else, if-elif-else",
+                                    "Nested conditions",
+                                    "Short-hand / Ternary operator"
+                                ]
+                            },
+                            {
+                                title: "Loops",
+                                subtopics: [
+                                    "for loops & while loops",
+                                    "break, continue, pass",
+                                    "Nested loops",
+                                    "Loop with else"
+                                ]
+                            }
+                        ],
+                        practice: [
+                            "Number guessing game",
+                            "Password generator"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 1,
+                title: "🧱 PHASE I — Core Python Development",
+                duration: "Weeks 3-5",
+                goal: "Master Python Data Structures & Functions",
+                steps: [
+                    {
+                        id: "1-1",
+                        title: "Data Structures",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            {
+                                title: "Strings",
+                                subtopics: ["String slicing, formatting, and methods", "Escape characters"]
+                            },
+                            {
+                                title: "Lists",
+                                subtopics: ["Indexing, slicing, methods", "List comprehension and Nested lists"]
+                            },
+                            {
+                                title: "Tuples",
+                                subtopics: ["Creating, operations, packing/unpacking", "Immutable concept"]
+                            },
+                            {
+                                title: "Sets",
+                                subtopics: ["Operations (union, intersection, difference)", "Frozen sets"]
+                            },
+                            {
+                                title: "Dictionaries",
+                                subtopics: ["Dictionary methods", "Nested dictionaries", "Dictionary comprehension"]
+                            }
+                        ],
+                        practice: [
+                            "Contact book",
+                            "To-Do list app"
+                        ]
+                    },
+                    {
+                        id: "1-2",
+                        title: "Functions",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Function Basics",
+                                subtopics: ["Definition & Calling", "Return values"]
+                            },
+                            {
+                                title: "Parameters",
+                                subtopics: ["Positional, keyword, default", "Variable-length (*args, **kwargs)"]
+                            },
+                            {
+                                title: "Advanced Functions",
+                                subtopics: ["Lambda functions", "Recursive functions", "Decorators"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "1-3",
+                        title: "Modules & Packages",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Imports",
+                                subtopics: ["Importing modules", "Creating modules", "from module import", "__name__ == '__main__'"]
+                            },
+                            {
+                                title: "Standard Libraries",
+                                subtopics: ["math", "random", "datetime", "os", "sys"]
+                            }
+                        ],
+                        practice: [
+                            "File organizer script"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "🧩 PHASE II — Object Oriented Programming",
+                duration: "Weeks 6-8",
+                goal: "Industry standard class design",
+                steps: [
+                    {
+                        id: "2-1",
+                        title: "OOP Basics",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Classes & Objects",
+                                subtopics: ["Class definition", "Object creation", "Constructors & Instance variables", "Methods"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "2-2",
+                        title: "OOP Pillars",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            {
+                                title: "Concepts",
+                                subtopics: ["Encapsulation", "Inheritance", "Polymorphism", "Abstraction"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "2-3",
+                        title: "Advanced OOP & Python Magic",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Advanced Topics",
+                                subtopics: [
+                                    "Method overriding",
+                                    "Operator overloading",
+                                    "Multiple inheritance",
+                                    "Abstract classes"
+                                ]
+                            },
+                            {
+                                title: "Magic Methods & Iterators",
+                                subtopics: [
+                                    "__init__, __str__, etc.",
+                                    "Generators",
+                                    "Iterators"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        id: "p-1",
+                        isProject: true,
+                        title: "✅ Project: OOP Systems",
+                        duration: "⏳ 1 Week",
+                        features: [
+                            "Library management system",
+                            "Banking system simulation"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 3,
+                title: "🛠️ PHASE III — Real Programming Skills",
+                duration: "Weeks 9-10",
+                goal: "Error handling, Files, and Git",
+                steps: [
+                    {
+                        id: "3-1",
+                        title: "Error Handling & Logging",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Exceptions",
+                                subtopics: ["try / except / finally / else", "Custom exceptions", "Raising exceptions"]
+                            },
+                            {
+                                title: "Logging",
+                                subtopics: ["Python logging module"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "3-2",
+                        title: "File Handling",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "File Operations",
+                                subtopics: ["Opening files", "Reading, writing, appending files", "File modes"]
+                            },
+                            {
+                                title: "Data Formats",
+                                subtopics: ["Working with CSV", "Working with JSON"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "3-3",
+                        title: "Git, Environments & Tools",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Virtual Environments",
+                                subtopics: ["venv", "dependency management (pip)"]
+                            },
+                            {
+                                title: "Version Control",
+                                subtopics: ["Git concepts: repositories, commits, branching, merging", "Platforms: GitHub, GitLab"]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 4,
+                title: "🚀 PHASE IV — Specialization Paths",
+                duration: "Months 3-4",
+                goal: "Choose your primary developer track",
+                steps: [
+                    {
+                        id: "4-1",
+                        title: "Path 1 — Backend Development (Most Jobs)",
+                        duration: "⏳ 1 Month",
+                        topics: [
+                            {
+                                title: "Frameworks & Concepts",
+                                subtopics: ["Django, Flask, FastAPI", "Routing, Templates, Middleware", "MVC architecture"]
+                            },
+                            {
+                                title: "APIs & Auth",
+                                subtopics: ["REST APIs", "Authentication (JWT)"]
+                            },
+                            {
+                                title: "Databases",
+                                subtopics: ["SQLite, PostgreSQL, MySQL", "MongoDB", "CRUD operations & ORM (SQLAlchemy)"]
+                            }
+                        ],
+                        practice: [
+                            "Blog system",
+                            "E-commerce backend"
+                        ]
+                    },
+                    {
+                        id: "4-2",
+                        title: "Path 2 — Data Science (Optional Branch)",
+                        duration: "⏳ 1 Month",
+                        topics: [
+                            {
+                                title: "Libraries",
+                                subtopics: ["NumPy, Pandas", "Matplotlib, Seaborn"]
+                            },
+                            {
+                                title: "Topics",
+                                subtopics: ["Data cleaning", "Data visualization", "Data analysis", "Statistics"]
+                            }
+                        ],
+                        practice: ["Stock analysis", "Data dashboards"]
+                    },
+                    {
+                        id: "4-3",
+                        title: "Path 3 — Machine Learning / AI (Optional Branch)",
+                        duration: "⏳ 1 Month",
+                        topics: [
+                            {
+                                title: "Libraries",
+                                subtopics: ["Scikit-learn, TensorFlow, PyTorch"]
+                            },
+                            {
+                                title: "Topics",
+                                subtopics: ["Supervised vs Unsupervised learning", "Model evaluation", "Feature engineering"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "4-4",
+                        title: "Path 4 — Automation & Tools (Optional Branch)",
+                        duration: "⏳ 1 Month",
+                        topics: [
+                            {
+                                title: "Libraries",
+                                subtopics: ["Selenium, Beautiful Soup, Requests"]
+                            },
+                            {
+                                title: "Projects",
+                                subtopics: ["Web scraper", "Automation bot", "Network scanner"]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 5,
+                title: "🧠 PHASE V — Advanced Python (Expert Level)",
+                duration: "Month 5",
+                goal: "Master Python Internals and Patterns",
+                steps: [
+                    {
+                        id: "5-1",
+                        title: "Asynchronous Programming",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Concepts",
+                                subtopics: ["async", "await", "asyncio", "Event loop"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "5-2",
+                        title: "Performance & Multiprocessing",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Optimization",
+                                subtopics: ["Profiling", "Multiprocessing module", "Threading module", "Thread synchronization (Locks/Semaphores)"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "5-3",
+                        title: "Memory Management & Internals",
+                        duration: "⏳ 1 Week",
+                        topics: [
+                            {
+                                title: "Internals",
+                                subtopics: ["Garbage collection", "Python bytecode", "CPython architecture", "Metaclasses", "Descriptors"]
+                            }
+                        ]
+                    },
+                    {
+                        id: "5-4",
+                        title: "Software Engineering Skills",
+                        duration: "⏳ 2 Weeks",
+                        topics: [
+                            {
+                                title: "Clean Code & Patterns",
+                                subtopics: ["Design patterns", "Clean code practices"]
+                            },
+                            {
+                                title: "Testing & DevOps",
+                                subtopics: ["Unit testing, Integration testing", "PyTest", "Docker containers", "CI/CD pipelines", "Cloud (AWS, GCP)"]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 6,
+                title: "🏆 PHASE VI — Make it to the Industry",
+                duration: "Month 6+",
+                goal: "Projects, Portfolio and Job prep",
+                steps: [
+                    {
+                        id: "p-final",
+                        isProject: true,
+                        title: "✅ Build Real Projects",
+                        duration: "⏳ 4+ Weeks",
+                        features: [
+                            "Build at least 5-10 production-level projects",
+                            "SaaS web application",
+                            "AI chatbot or Social media API",
+                            "Data analytics dashboard or Web scraper"
+                        ]
+                    },
+                    {
+                        id: "6-1",
+                        title: "Job Readiness",
+                        duration: "⏳ Ongoing",
+                        topics: [
+                            {
+                                title: "Prep",
+                                subtopics: [
+                                    "Build GitHub portfolio",
+                                    "Learn System Design",
+                                    "Practice on LeetCode / HackerRank / Codeforces"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        async function seed() {
+            const statusDiv = document.getElementById('status');
+            try {
+                statusDiv.innerText = "Saving data to Firestore...";
+                await setDoc(doc(db, "roadmap_content", "python_main"), {
+                    phases: roadmapData,
+                    updatedAt: new Date()
+                });
+                statusDiv.innerText = "✅ Successfully seeded Python roadmap data to 'roadmap_content/python_main'!";
+            } catch (error) {
+                console.error("Error setting document: ", error);
+                statusDiv.innerText = "❌ Error: " + error.message;
+            }
+        }
+
+        seed();
+    </script>
+</body>
+
+</html>

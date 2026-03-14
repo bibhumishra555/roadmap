@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastery Hub - Choose Your Path</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hub-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .path-card {
+            background: #000;
+            border: 2px solid #004400;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            width: 350px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+        }
+
+        .path-card:hover {
+            border-color: #00ff00;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 255, 0, 0.3);
+        }
+
+        .path-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .path-title {
+            color: #00ff00;
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        .path-desc {
+            color: #aaffaa;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .hub-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .terminal-text {
+            border-right: 2px solid #00ff00;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff00; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center; border: 1px solid #00ff00; background: #050505;">
+        
+        <div class="hub-header">
+            <h1 style="color: #00ff00; font-size: 3em; margin-bottom: 10px; text-shadow: 0 0 10px #00ff00;">MASTERY HUB</h1>
+            <p style="color: #88ff88; font-size: 1.2em;">
+                <span class="terminal-text" style="max-width: fit-content;">> INITIALIZING SYSTEM... SELECT YOUR UPGRADE PATH_</span>
+            </p>
+        </div>
+
+        <div class="hub-container">
+            <!-- Java Path -->
+            <a href="java.html" class="path-card">
+                <div class="path-icon">☕</div>
+                <div class="path-title">Java</div>
+                <div class="path-desc">
+                    Enterprise architecture, strictly typed object-oriented backend engineering.
+                </div>
+                <div style="margin-top: 20px; color: #005500; font-weight: bold;">> [ ENTER SUBSYSTEM ]</div>
+            </a>
+
+            <!-- Python Path -->
+            <a href="python.html" class="path-card">
+                <div class="path-icon">🐍</div>
+                <div class="path-title">Python</div>
+                <div class="path-desc">
+                    High-level scripting, data structures, backend APIs, and artificial intelligence.
+                </div>
+                <div style="margin-top: 20px; color: #005500; font-weight: bold;">> [ ENTER SUBSYSTEM ]</div>
+            </a>
+        </div>
+
+    </div>
+</body>
+
+</html>

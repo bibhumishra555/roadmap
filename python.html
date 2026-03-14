@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Mastery Roadmap Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="text-align: left; padding: 0 40px; margin-top: -20px;">
+                <a href="index.html" class="reset-button" style="text-decoration: none; display: inline-block; padding: 10px 20px;">← Back to Hub</a>
+            </div>
+            <h1>🐍 Python Mastery Roadmap</h1>
+            <p class="subtitle">Your Journey to Industry-Ready Python Developer</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">⏳ Total Duration: 6–8 Months | Daily Study: 2–3 Hours</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number" id="totalSteps">0</div>
+                <div class="label">Total Steps</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="completedSteps">0</div>
+                <div class="label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="remainingSteps">0</div>
+                <div class="label">Remaining</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="progressPercent">0%</div>
+                <div class="label">Progress</div>
+            </div>
+        </div>
+
+        <div class="stats stats-secondary">
+            <div class="stat-card">
+                <div class="number" id="startDate" onclick="enableDatePicker()" style="cursor: pointer;"
+                    title="Click to change start date">--</div>
+                <input type="date" id="startDatePicker" style="display: none;" onchange="updateStartDate(this.value)"
+                    onblur="disableDatePicker()">
+                <div class="label">Start Date</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="projectedDate">--</div>
+                <div class="label">Projected Completion</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="velocity">0</div>
+                <div class="label">Items / Day</div>
+            </div>
+        </div>
+
+        <div style="padding: 0 40px;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar">0%</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Dynamic Roadmap Container -->
+            <div id="roadmap-container"></div>
+
+            <!-- Daily Routine (Static content as it doesn't change much) -->
+            <div class="daily-routine">
+                <h2>📌 Daily Study Routine (Best Strategy)</h2>
+                <table class="routine-table">
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Theory Reading</td>
+                            <td>30 min</td>
+                        </tr>
+                        <tr>
+                            <td>Coding Practice</td>
+                            <td>60–90 min</td>
+                        </tr>
+                        <tr>
+                            <td>Problem Solving</td>
+                            <td>30 min</td>
+                        </tr>
+                        <tr>
+                            <td>Revision</td>
+                            <td>15 min</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="python_script.js"></script>
+</body>
+
+</html>
